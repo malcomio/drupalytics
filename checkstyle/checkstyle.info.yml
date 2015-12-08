@@ -1,0 +1,8 @@
+name: Checkstyle Results
+description: Displays the results of a checkstyle analysis
+core: 8.x
+type: module
+
+dependencies:
+  - geshifilter
+  - code_analyzer

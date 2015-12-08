@@ -1,0 +1,19 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.checkstyle_issue.message
+  module:
+    - text
+id: checkstyle_issue.checkstyle_issue.message
+field_name: message
+entity_type: checkstyle_issue
+bundle: checkstyle_issue
+label: Message
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

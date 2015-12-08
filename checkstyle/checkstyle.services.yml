@@ -1,0 +1,19 @@
+services:
+  checkstyle.issue.nodemapper:
+    class: Drupal\checkstyle\IssueNodeMapper
+    arguments: ['@database']
+    tags:
+      - { name: backend_overridable }
+  checkstyle.geshiprocessor:
+    class: Drupal\checkstyle\GeshiProcessor
+    tags:
+      - { name: backend_overridable }
+  checkstyle.checkstyle_subscriber:
+    class: Drupal\checkstyle\CheckstyleSubscriber
+    tags:
+      - { name: event_subscriber }
+  checkstyle.analyzer:
+    class: Drupal\checkstyle\Analyzer
+    arguments: ['@code_analyzer.codeparser', '@checkstyle.geshiprocessor' ]
+    tags:
+      - { name: backend_overridable }

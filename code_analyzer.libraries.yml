@@ -1,0 +1,7 @@
+code_analyzer:
+  version: VERSION
+  js:
+    assets/js/code_analyzer.js: {}
+  dependencies:
+    - core/jquery
+    - core/jquery.ui.accordion

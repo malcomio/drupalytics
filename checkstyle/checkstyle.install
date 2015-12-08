@@ -1,0 +1,56 @@
+<?php
+
+/**
+ * Implements hook_schema().
+ */
+function checkstyle_schema() {
+  $schema['checkstyle_issue_type_mapping'] = array(
+    'description' => 'Stores the relationship of checkstyle issues to terms.',
+    'fields' => array(
+      'nid' => array(
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 0,
+        'description' => 'The {node}.nid of the checkstyle issue type.',
+      ),
+      'type' => array(
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+        'default' => '',
+      ),
+    ),
+    'indexes' => array(
+      'nid' => array('nid'),
+    ),
+    'primary key' => array('nid'),
+    'foreign keys' => array(
+      'type_node' => array(
+        'table' => 'node',
+        'columns' => array(
+          'nid' => 'nid',
+        ),
+      ),
+    ),
+  );
+
+  return $schema;
+}
+
+/**
+ * Implements hook_requirements().
+ */
+function checkstyle_requirements($phase) {
+  $requirements = [];
+  if ($phase == 'install') {
+    if (!class_exists('\Gitonomy\Git\Repository')) {
+      $requirements['addressing_library'] = [
+        'description' => t('Checkstyle requires the gitonomy/gitlib library.'),
+        'severity' => REQUIREMENT_ERROR,
+      ];
+    }
+  }
+
+  return $requirements;
+}

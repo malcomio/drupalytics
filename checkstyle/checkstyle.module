@@ -1,0 +1,36 @@
+<?php
+
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
+
+/**
+ * Implements hook_theme().
+ */
+function checkstyle_theme() {
+  return array(
+    'checkstyle_issue' => array(
+      'variables' => array('code' => NULL),
+    ),
+  );
+}
+
+function template_preprocess_checkstyle_issue(&$variables) {
+  $variables['source_code'] = "az";
+}
+
+function checkstyle_checkstyle_issue_view(array &$build, EntityInterface $node, EntityViewDisplayInterface $display, $view_mode) {
+  /** @var \Drupal\checkstyle\Entity\CheckstyleIssue $node */
+  if ($view_mode == "full") {
+    $build = array(
+      '#theme' => 'checkstyle_issue',
+      '#entity_type' => 'checkstyle_issue',
+      '#checkstyle_issue' => $node,
+      '#code' => $node->getSourceCode(),
+      '#attached' => array(
+        'library' => array(
+          'checkstyle/checkstyle',
+        )
+      )
+    );
+  }
+}

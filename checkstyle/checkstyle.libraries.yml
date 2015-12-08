@@ -1,0 +1,10 @@
+checkstyle:
+  version: VERSION
+  css:
+    component:
+      assets/css/checkstyle.css: {}
+  js:
+    assets/js/checkstyle.js: {}
+  dependencies:
+    - core/jquery
+    - geshifilter/geshifilter

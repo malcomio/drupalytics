@@ -1,0 +1,59 @@
+div.geshifilter {
+    background-color: #f6f6f2;
+    padding: 5px;
+    border: 1px solid #CCC;
+    font-size: 65.5% !important;
+    margin-bottom: .5em;
+}
+
+div.geshifilter li.ln-xtra {
+    background: #81CEFF;
+    border-left: 6px solid #0071b3;
+    border-radius: 2px;
+}
+
+div.geshifilter ol {
+    font-family: "Bitstream Vera Sans Mono",Monaco,"Lucida Console",monospace;
+}
+
+div.geshifilter ol li {
+    color: #c4c4c4;
+}
+
+div.geshifilter ol li > div {
+    color: #292929;
+}
+
+div.geshifilter .message {
+    border-left: 6px solid #0071b3;
+    color: #292929;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    width: 100%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 1.5em;
+    border-bottom: 1px dotted #ddd;
+    border-left: 0;
+    white-space: initial;
+    background: #f7fcff;
+}
+div.geshifilter .message p {
+    font-style: italic;
+}
+
+div.geshifilter-title {
+    background: #f5f5f2;
+    font-size: 65.5% !important;
+    border: 1px solid #bfbfba;
+    font-weight: bold;
+    margin: 0.5em 0.5em -0.5em 0.4em;
+}
+
+div.code-analysis h3 {
+    font-size: 85.5% !important;
+    margin: 0;
+    background: none;
+    border: none;
+    border-bottom: 1px solid #ccc;
+}

@@ -1,0 +1,14 @@
+<div class="code-analysis">
+    {% for type in types %}
+    <h3>{{ type.source }} ({{ type.issue_count }})</h3>
+    <div class="issue-type">
+        <div class="issue-list">
+        {% for issue in type.issues %}
+            <div class="issue">
+                {{ issue }}
+            </div>
+        {% endfor %}
+        </div>
+    </div>
+    {% endfor %}
+</div>

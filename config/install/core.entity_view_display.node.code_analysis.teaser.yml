@@ -1,0 +1,28 @@
+langcode: en
+status: true
+dependencies:
+    config:
+        - core.entity_view_mode.node.teaser
+        - field.field.node.code_analysis.body
+        - node.type.code_analysis
+    module:
+        - text
+        - user
+    enforced:
+      module:
+        - code_analyzer
+id: node.code_analysis.teaser
+targetEntityType: node
+bundle: code_analysis
+mode: teaser
+content:
+    body:
+        label: hidden
+        type: text_summary_or_trimmed
+        weight: 101
+        settings:
+            trim_length: 600
+        third_party_settings: {  }
+    links:
+        weight: 100
+hidden: {  }

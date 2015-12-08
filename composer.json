@@ -1,0 +1,7 @@
+{
+  "name": "drupal/code_analyzer",
+  "require": {
+    "phpmd/phpmd": "@stable",
+    "gitonomy/gitlib": "dev-master"
+  }
+}

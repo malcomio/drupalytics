@@ -1,0 +1,7 @@
+checkstyle.analysis:
+  path: /code_analyzer
+  defaults:
+    _title: Code Analyzer
+    _controller: '\Drupal\code_analyzer\Controller\CodeAnalyzerController::main'
+  requirements:
+    _permission: 'administer code analyzer'

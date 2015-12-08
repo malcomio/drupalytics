@@ -1,0 +1,26 @@
+langcode: en
+status: true
+dependencies:
+    config:
+        - field.field.node.code_analysis.body
+        - node.type.code_analysis
+    module:
+        - text
+        - user
+    enforced:
+      module:
+        - code_analyzer
+id: node.code_analysis.default
+targetEntityType: node
+bundle: code_analysis
+mode: default
+content:
+    body:
+        label: hidden
+        type: text_default
+        weight: 101
+        settings: {  }
+        third_party_settings: {  }
+    links:
+        weight: 100
+hidden: {  }

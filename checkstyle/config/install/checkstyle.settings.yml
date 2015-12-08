@@ -1,0 +1,5 @@
+vocabulary: checkstyle
+
+# Determines the amount of lines that need to be displayed in the code syntax
+# highlighter.
+display_lines: 5

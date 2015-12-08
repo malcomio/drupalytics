@@ -1,0 +1,22 @@
+# Checkstyle issue routing definition
+checkstyle_issue.settings_tab:
+  route_name: checkstyle_issue.settings
+  title: 'Settings'
+  base_route: checkstyle_issue.settings
+
+entity.checkstyle_issue.canonical:
+  route_name: entity.checkstyle_issue.canonical
+  base_route: entity.checkstyle_issue.canonical
+  title: 'View'
+
+entity.checkstyle_issue.edit_form:
+  route_name: entity.checkstyle_issue.edit_form
+  base_route: entity.checkstyle_issue.canonical
+  title: Edit
+
+entity.checkstyle_issue.delete_form:
+  route_name:  entity.checkstyle_issue.delete_form
+  base_route:  entity.checkstyle_issue.canonical
+  title: Delete
+  weight: 10
+

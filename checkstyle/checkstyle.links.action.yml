@@ -1,0 +1,7 @@
+entity.checkstyle_issue.add_form:
+  route_name: entity.checkstyle_issue.add_form
+  title: 'Add Checkstyle Issue'
+  appears_on:
+    - entity.checkstyle_issue.collection
+    - entity.checkstyle_issue.canonical
+

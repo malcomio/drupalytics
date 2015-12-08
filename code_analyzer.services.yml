@@ -1,0 +1,16 @@
+services:
+  code_analyzer.githandler:
+    class: Drupal\code_analyzer\GitHandler
+    tags:
+      - { name: backend_overridable }
+
+  code_analyzer.codeparser:
+    class: Drupal\code_analyzer\CodeParser
+    tags:
+      - { name: backend_overridable }
+
+  code_analyzer.issuemapper:
+    class: Drupal\code_analyzer\IssueMapper
+    arguments: ['@database']
+    tags:
+      - { name: backend_overridable }

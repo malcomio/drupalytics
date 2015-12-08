@@ -1,0 +1,29 @@
+langcode: en
+status: true
+dependencies:
+    config:
+        - field.field.node.checkstyle_type.body
+        - node.type.checkstyle_type
+    module:
+        - text
+        - user
+id: node.checkstyle_type.default
+targetEntityType: node
+bundle: checkstyle_type
+mode: default
+content:
+    issue_type:
+        label: hidden
+        type: text_default
+        weight: -2
+        settings: { }
+        third_party_settings: { }
+    body:
+        label: hidden
+        type: text_default
+        weight: 101
+        settings: {  }
+        third_party_settings: {  }
+    links:
+        weight: 100
+hidden: {  }

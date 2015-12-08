@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - text
+id: checkstyle_issue.checkstyle_issue.message
+field_name: message
+entity_type: checkstyle_issue
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: true
+custom_storage: false
+settings:
+  display_summary: true
+field_type: text_with_summary

@@ -1,0 +1,12 @@
+# Checkstyle issue menu items definition
+entity.checkstyle_issue.collection:
+  title: 'Checkstyle issues list'
+  route_name: entity.checkstyle_issue.collection
+  description: 'List checkstyle issue entities'
+
+checkstyle_issue.admin.structure.settings:
+  title: Checkstyle issue settings
+  description: 'Configure checsktyle issue entities'
+  route_name: checkstyle_issue.settings
+  parent: system.admin_structure
+

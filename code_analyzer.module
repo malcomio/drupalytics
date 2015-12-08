@@ -1,0 +1,57 @@
+<?php
+
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
+
+/**
+ * Implements hook_ENTITY_TYPE_view() for node entities.
+ */
+function code_analyzer_node_view(array &$build, EntityInterface $node, EntityViewDisplayInterface $display, $view_mode) {
+  if ($view_mode == 'full' && $node->bundle() == 'code_analysis') {
+    /** @var \Drupal\code_analyzer\IssueMapper $issuemapper */
+    $issuemapper = \Drupal::service('code_analyzer.issuemapper');
+    $issues = $issuemapper->getIssuesByEntity($node);
+    $build['code_analysis'] = array(
+      '#theme' => 'code_analysis',
+      '#issues' => $issues,
+      '#attached' => array(
+        'library' => array(
+          'core/jquery.ui.accordion',
+          'code_analyzer/code_analyzer',
+        ),
+      ),
+    );
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function code_analyzer_theme() {
+  return array(
+    'code_analysis' => array(
+      'variables' => array('issues' => NULL),
+    ),
+  );
+}
+
+
+/**
+ * Prepares variables for book navigation templates.
+ *
+ * Default template: code-analysis.html.twig.
+ */
+function template_preprocess_code_analysis(&$variables) {
+  $view_builder = \Drupal::entityManager()->getViewBuilder('checkstyle_issue');
+  $variables['types'] = array();
+  foreach ($variables['issues'] as $issue) {
+    $variables['types'][$issue->getSource()]['source'] = $issue->getTypeName();
+    $variables['types'][$issue->getSource()]['issues'][] = $view_builder->view($issue);
+  }
+
+  foreach ($variables['types'] as $type => $data) {
+    $variables['types'][$type]['issue_count'] = count($variables['types'][$type]['issues']);
+  }
+
+  $re = "z";
+}

@@ -1,0 +1,15 @@
+add checkstyle issue entities:
+  title: 'Create new Checkstyle issue entities'
+
+administer checkstyle issue entities:
+  title: 'Administer Checkstyle issue entities'
+  description: 'Allow to access the administration form to configure Checkstyle issue entities.'
+
+delete checkstyle issue entities:
+  title: 'Delete Checkstyle issue entities'
+
+edit checkstyle issue entities:
+  title: 'Edit Checkstyle issue entities'
+
+view checkstyle issue entities:
+  title: 'View Checkstyle issue entities'

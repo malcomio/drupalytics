@@ -1,0 +1,39 @@
+<?php
+
+/**
+ * Implements hook_schema().
+ */
+function code_analyzer_schema() {
+  $schema['code_analyzer_project_issues'] = array(
+    'description' => 'Stores the relationship of code analysis issues to a code analysis.',
+    'fields' => array(
+      'nid' => array(
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 0,
+        'description' => 'The {node}.nid of the code analysis.',
+      ),
+      'inid' => array(
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 0,
+        'description' => 'The entity id of the issue.',
+      ),
+    ),
+    'indexes' => array(
+      'nid' => array('nid'),
+    ),
+    'foreign keys' => array(
+      'type_node' => array(
+        'table' => 'node',
+        'columns' => array(
+          'nid' => 'nid',
+        ),
+      ),
+    ),
+  );
+
+  return $schema;
+}

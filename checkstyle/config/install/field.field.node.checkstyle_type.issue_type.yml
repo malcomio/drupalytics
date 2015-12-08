@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.issue_type
+    - node.type.checkstyle_type
+id: node.checkstyle_type.issue_type
+field_name: issue_type
+entity_type: node
+bundle: checkstyle_type
+label: Type
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

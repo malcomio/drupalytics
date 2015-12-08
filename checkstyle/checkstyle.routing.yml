@@ -1,0 +1,67 @@
+checkstyle.analysis:
+  path: /checkstyle/analysis
+  defaults:
+    _title: Checkstyle Analysis
+    _controller: '\Drupal\checkstyle\Controller\CheckstyleController::result'
+  requirements:
+    _permission: 'administer scheduler'
+
+# CheckstyleIssue routing definition
+entity.checkstyle_issue.canonical:
+  path: '/checkstyle_issue/{checkstyle_issue}'
+  defaults:
+    _entity_view: 'checkstyle_issue'
+    _title: 'Checkstyle issue'
+  requirements:
+    _entity_access: 'checkstyle_issue.view'
+
+entity.checkstyle_issue.collection:
+  path: '/admin/checkstyle_issue'
+  defaults:
+    _entity_list: 'checkstyle_issue'
+    _title: 'Checkstyle issue list'
+  requirements:
+    _permission: 'view checkstyle issue entities'
+  options:
+    _admin_route: TRUE
+
+entity.checkstyle_issue.add_form:
+  path: '/admin/checkstyle_issue/add'
+  defaults:
+    _entity_form: checkstyle_issue.add
+    _title: 'Add Checkstyle issue'
+  requirements:
+    _permission: 'add checkstyle issue entities'
+  options:
+    _admin_route: TRUE
+
+entity.checkstyle_issue.edit_form:
+  path: '/admin/checkstyle_issue/{checkstyle_issue}/edit'
+  defaults:
+    _entity_form: checkstyle_issue.edit
+    _title: 'Edit Checkstyle issue'
+  requirements:
+    _permission: 'edit checkstyle issue entities'
+  options:
+    _admin_route: TRUE
+
+entity.checkstyle_issue.delete_form:
+  path: '/admin/checkstyle_issue/{checkstyle_issue}/delete'
+  defaults:
+    _entity_form: checkstyle_issue.delete
+    _title: 'Delete Checkstyle issue'
+  requirements:
+    _permission: 'delete checkstyle issue entities'
+  options:
+    _admin_route: TRUE
+
+checkstyle_issue.settings:
+  path: 'admin/structure/checkstyle_issue'
+  defaults:
+   _form: '\Drupal\checkstyle\Entity\Form\CheckstyleIssueSettingsForm'
+   _title: 'Checkstyle issue settings'
+  requirements:
+    _permission: 'administer checkstyle issue entities'
+  options:
+    _admin_route: TRUE
+
