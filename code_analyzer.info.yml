@@ -3,3 +3,4 @@ description: Help module that provides several code analyzers.
 core: 8.x
 type: module
 dependencies:
+  - composer_manager
