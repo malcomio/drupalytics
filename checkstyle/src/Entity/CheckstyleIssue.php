@@ -81,10 +81,22 @@ class CheckstyleIssue extends ContentEntityBase implements CheckstyleIssueInterf
     return $this->get('user_id')->entity;
   }
 
+  /**
+   * Get the affected source code.
+   *
+   * @return string
+   *   The affected source code.
+   */
   public function getSourceCode() {
     return $this->get('code')->value;
   }
 
+  /**
+   * Get the source (sniff).
+   *
+   * @return string
+   *   The source (sniff) of the issue.
+   */
   public function getSource() {
     return $this->get('source')->value;
   }
@@ -112,11 +124,23 @@ class CheckstyleIssue extends ContentEntityBase implements CheckstyleIssueInterf
     return $this;
   }
 
+  /**
+   * Get the name of the type of the issue.
+   *
+   * @return string
+   *   The name of the type of the issue.
+   */
   public function getTypeName() {
     $type_entity = Node::load($this->getTypeId());
     return $type_entity->get('title')->value;
   }
 
+  /**
+   * Get the Entity ID of the type of the issue.
+   *
+   * @return int
+   *   The Entity ID of the type of the issue.
+   */
   public function getTypeId() {
     return $this->get('issue_type')->target_id;
   }
@@ -159,19 +183,47 @@ class CheckstyleIssue extends ContentEntityBase implements CheckstyleIssueInterf
     return $fields;
   }
 
+  /**
+   * Get the line number of the line that needs to be highlighted.
+   *
+   * @return int
+   *   The number of the line.
+   */
   public function getHightlightLine() {
     return $this->get('line')->value;
   }
 
+  /**
+   * Get the relative path of the file that has been analysed.
+   *
+   * @return string
+   *   The relative path of the file.
+   */
   public function getRelativePath() {
     return $this->get('relative_path')->value;
   }
 
+  /**
+   * Get the message of the issue.
+   *
+   * @return string
+   *   The message of the issue.
+   */
   public function getMessage() {
     return $this->get('message')->value;
   }
 
-
+  /**
+   * Get the amount if lines that need to be displayed.
+   *
+   * This has been set on a database level, because the configuration might
+   * have changed by the time that we are displaying the results. If this value
+   * is not stored, we might be highlighting the wrong line.
+   *
+   * @return int
+   *   The amount of lines that need to be displayed before and after the
+   *   highlighted line.
+   */
   public function getDisplayLines() {
     return $this->get('display_lines')->value;
   }

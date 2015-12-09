@@ -1,5 +1,11 @@
 <?php
 
+/**
+ * @file
+ * This is the checkstyle module which makes it possible for the code_analyzer
+ * module to perform a checkstyle analysis on the code of modules.
+ */
+
 use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
 
@@ -14,10 +20,16 @@ function checkstyle_theme() {
   );
 }
 
+/**
+ * Implements template_preprocess_ENTITY_TYPE().
+ */
 function template_preprocess_checkstyle_issue(&$variables) {
   $variables['source_code'] = "az";
 }
 
+/**
+ * Implements hook_ENTITY_TYPE_view().
+ */
 function checkstyle_checkstyle_issue_view(array &$build, EntityInterface $node, EntityViewDisplayInterface $display, $view_mode) {
   /** @var \Drupal\checkstyle\Entity\CheckstyleIssue $node */
   if ($view_mode == "full") {

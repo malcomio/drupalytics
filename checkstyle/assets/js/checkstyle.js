@@ -1,16 +1,16 @@
 /**
  * @file
- * Javascript behaviors for the Book module.
+ * Javascript behaviors for the checkstyle module.
  */
 
 (function ($) {
   /**
-   * Adds summaries to the book outline form.
+   * Adds the issue message to the source code.
    *
    * @type {Drupal~behavior}
    *
    * @prop {Drupal~behaviorAttach} attach
-   *   Attaches summary behavior to book outline forms.
+   *   Attaches a behavior that will move a div from a certain place to another.
    */
   Drupal.behaviors.checkstyle = {
     attach: function (context, settings) {

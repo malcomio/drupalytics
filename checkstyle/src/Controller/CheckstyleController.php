@@ -2,7 +2,7 @@
 
 /**
  * @file
- * Contains \Drupal\node\Controller\NodeController.
+ * Contains \Drupal\node\Controller\CheckstyleController.
  */
 
 namespace Drupal\checkstyle\Controller;
@@ -13,7 +13,7 @@ use Drupal\Core\Controller\ControllerBase;
 use Drupal\Core\DependencyInjection\ContainerInjectionInterface;
 
 /**
- * Returns responses for Node routes.
+ * Returns responses for CheckstyleIssue routes.
  */
 class CheckstyleController extends ControllerBase implements ContainerInjectionInterface {
 

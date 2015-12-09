@@ -2,7 +2,7 @@
 
 /**
  * @file
- * Contains \Drupal\checkstyle\CheckstyleAnalyzer.
+ * Contains \Drupal\checkstyle\Analyzer.
  */
 
 namespace Drupal\checkstyle;
@@ -26,7 +26,7 @@ class Analyzer extends BaseAnalyzer implements AnalyzerInterface {
   /**
    * Constructs an Analyzer object.
    *
-   * @param \Drupal\code_analyzer\CodeParser $code_parser
+   * @param \Drupal\code_analyzer\CodeParser $codeparser
    *   The code parser that will be used for analyzing files.
    * @param \Drupal\checkstyle\GeshiProcessor $geshi_processor
    *   The processor that will transform the source code to HTML.

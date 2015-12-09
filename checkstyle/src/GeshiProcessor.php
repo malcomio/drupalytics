@@ -2,7 +2,7 @@
 
 /**
  * @file
- * Contains \Drupal\checkstyle\CheckstyleGeshiProcesser.
+ * Contains \Drupal\checkstyle\GeshiProcessor.
  */
 
 namespace Drupal\checkstyle;
@@ -13,10 +13,22 @@ use Drupal\Component\Utility\Html;
 /**
  * Defines a GeSHi processor for code related to checkstyle issues.
  *
- * @package Drupal\checkstyle
+ * @ingroup checkstyle
  */
 class GeshiProcessor extends GeshiFilterProcess {
 
+  /**
+   * Get the GeSHi object.
+   *
+   * @param string $source_code
+   *   The source code that will need to be displayed via GeSHi.
+   * @param string $lang
+   *   The language of the source code.
+   *
+   * @return \GeSHi|string
+   *   The GeSHi object, if the library has not been loaded it will just
+   *   return the $source_code.
+   */
   public static function getGeshi($source_code, $lang = "PHP") {
     $source_code = trim($source_code, "\n\r");
 
@@ -31,6 +43,11 @@ class GeshiProcessor extends GeshiFilterProcess {
     return self::geshiFactory($source_code, $lang);
   }
 
+  /**
+   * Set the GeSHi object.
+   *
+   * @param \GeSHi $geshi
+   */
   public function setGeshiClass(\GeSHi $geshi) {
     $this->geshi = $geshi;
   }
@@ -42,14 +59,14 @@ class GeshiProcessor extends GeshiFilterProcess {
    *   Source code to process.
    * @param string $lang
    *   Language from sourcecode.
-   * @param int $line_numbering
-   *   The line numbering mode, one of LINE_NUMBERS_* from GeshiFilter class.
    * @param int $linenumbers_start
    *   The line number to start from.
-   * @param bool $inline_mode
-   *   When to write all styles inline or from a css.
+   * @param string $message
+   *   The message that will be displayed in the highlighted section.
    * @param string $title
-   *   The title to use in code.
+   *   The title to use.
+   * @param \GeSHi $geshi
+   *   (optional) The GeSHi object that will be used for generating the HTML.
    *
    * @return string
    *   The sourcecode after process by Geshi.
@@ -84,6 +101,9 @@ class GeshiProcessor extends GeshiFilterProcess {
     return $source_code;
   }
 
+  /**
+   * {@inheritdoc}
+   */
   public static function overrideGeshiDefaults(\Geshi &$geshi, $langcode) {
     $config = \Drupal::config('geshifilter.settings');
     parent::overrideGeshiDefaults($geshi, $langcode);
