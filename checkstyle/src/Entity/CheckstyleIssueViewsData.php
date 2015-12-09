@@ -2,7 +2,7 @@
 
 /**
  * @file
- * Contains \Drupal\checkstyle\Entity\CheckstyleIssue.
+ * Contains \Drupal\checkstyle\Entity\CheckstyleIssueViewsData.
  */
 
 namespace Drupal\checkstlye\Entity;

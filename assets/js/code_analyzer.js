@@ -1,16 +1,16 @@
 /**
  * @file
- * Javascript behaviors for the Book module.
+ * Javascript behaviors for the Code Analyzer module.
  */
 
 (function ($) {
   /**
-   * Adds summaries to the book outline form.
+   * Adds an accordion UI effect to the list of issues.
    *
    * @type {Drupal~behavior}
    *
    * @prop {Drupal~behaviorAttach} attach
-   *   Attaches summary behavior to book outline forms.
+   *   Attaches accordion behavior to code analysis issues.
    */
   Drupal.behaviors.code_analyzer = {
     attach: function (context, settings) {

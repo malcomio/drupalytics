@@ -49,7 +49,7 @@ class CheckstyleIssueListBuilder extends EntityListBuilder {
     $ref_entity = Node::load($ref_field->get(0)->getValue()['target_id']);
     krumo($ref_entity->get('issue_type')->getValue()[0]['value']);
     #krumo( $ref_entity->get('title'));
-    # @todo find decent way of displaying this shit
+    # @todo find decent way of displaying this stuff
     $row['issue_type'] = $ref_entity->get('issue_type')->getValue()[0]['value'];
     return $row + parent::buildRow($entity);
   }

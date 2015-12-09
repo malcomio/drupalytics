@@ -1,6 +1,11 @@
 <?php
 
 /**
+ * @file
+ * Install, update and uninstall functions for the code_analyzer module.
+ */
+
+/**
  * Implements hook_schema().
  */
 function code_analyzer_schema() {

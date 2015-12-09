@@ -1,9 +1,8 @@
 <?php
+
 /**
- * Created by PhpStorm.
- * User: legovaer
- * Date: 05/12/15
- * Time: 18:12
+ * @file
+ * Contains \Drupal\checkstyle\IssueNodeMapper
  */
 
 namespace Drupal\checkstyle;
@@ -11,6 +10,11 @@ namespace Drupal\checkstyle;
 use Drupal\Core\Database\Connection;
 use Drupal\node\Entity\Node;
 
+/**
+ * Defines an object that will map CheckstyleIssues with CheckstyleTypes.
+ *
+ * @in-group checkstyle
+ */
 class IssueNodeMapper {
   /**
    * Constructs the forum manager service.
@@ -78,9 +82,13 @@ class IssueNodeMapper {
   }
 
   /**
-   * @param $type
+   * Get the checkstyle type entity for a specified type.
    *
-   * @return Node
+   * @param string $type
+   *   The type to look for.
+   *
+   * @return Node|NULL
+   *   The Node object if the type exists, otherwise NULL.
    */
   public function getCheckstyleType($type) {
     $query = $this->connection->select('checkstyle_issue_type_mapping', 'citm');
