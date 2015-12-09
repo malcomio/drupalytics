@@ -1,0 +1,14 @@
+<?php
+
+/**
+ * @file
+ * Provides the install hook that will enable all required modules.
+ */
+
+/**
+ * Implements hook_install().
+ */
+function drupalytics_install() {
+  include_once DRUPAL_ROOT . '/core/profiles/standard/standard.install';
+  standard_install();
+}
