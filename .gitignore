@@ -1,0 +1,9 @@
+# Ignore any ".idea" folder created by PhpStorm:
+#
+.idea/
+
+# Ignore contrib modules, added by the make file from other GIT repositories:
+modules/contrib/**
+
+# Ignore custom shared modules, added by the make file from other GIT repositories:
+modules/shared/**
