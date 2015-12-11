@@ -5,7 +5,7 @@
  * Contains \Drupal\checkstyle\Entity\CheckstyleIssueViewsData.
  */
 
-namespace Drupal\checkstlye\Entity;
+namespace Drupal\checkstlye;
 
 use Drupal\views\EntityViewsData;
 use Drupal\views\EntityViewsDataInterface;

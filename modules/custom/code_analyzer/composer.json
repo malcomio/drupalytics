@@ -2,6 +2,7 @@
   "name": "drupal/code_analyzer",
   "require": {
     "phpmd/phpmd": "@stable",
-    "gitonomy/gitlib": "dev-master"
+    "gitonomy/gitlib": "dev-master",
+    "symfony/finder": "2.8"
   }
 }

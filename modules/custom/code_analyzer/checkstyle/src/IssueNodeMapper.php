@@ -58,7 +58,7 @@ class IssueNodeMapper {
    * @return Node
    */
   public function createIssueType($type) {
-    $checkstyle_type = Node::create(['issue_type' => $type, 'entity_type' => 'checkstyle_type', 'title' => $type]);
+    $checkstyle_type = Node::create(['issue_type' => $type, 'type' => 'checkstyle_type', 'title' => $type]);
     $checkstyle_type->save();
 
     $this->connection->insert('checkstyle_issue_type_mapping')

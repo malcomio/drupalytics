@@ -1,12 +1,12 @@
 langcode: en
 status: true
 dependencies:
-    config:
-        - field.field.node.checkstyle_type.body
-        - node.type.checkstyle_type
-    module:
-        - path
-        - text
+  config:
+    - field.field.node.checkstyle_type.body
+    - node.type.checkstyle_type
+  module:
+    - path
+    - text
 id: node.checkstyle_type.default
 targetEntityType: node
 bundle: checkstyle_type
