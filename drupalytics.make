@@ -30,3 +30,16 @@ projects[geshifilter][download][interactive] = true
 projects[geshifilter][type] = "module"
 projects[geshifilter][subdir] = "contrib"
 projects[geshifilter][overwrite] = TRUE
+
+projects[libraries][download][type] = "git"
+projects[libraries][download][url] = "http://git.drupal.org/project/libraries.git"
+projects[libraries][download][branch] = 8.x-3.x
+projects[libraries][download][interactive] = true
+projects[libraries][type] = "module"
+projects[libraries][subdir] = "contrib"
+projects[libraries][overwrite] = TRUE
+
+libraries[geshi][download][type] = "git"
+libraries[geshi][download][url] = "https://github.com/legovaer/GeSHi.git"
+libraries[geshi][download][tag] = "1.0.8.11"
+libraries[geshi][interactive] = TRUE

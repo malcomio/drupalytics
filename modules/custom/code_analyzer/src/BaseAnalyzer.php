@@ -7,8 +7,8 @@
 
 namespace Drupal\code_analyzer;
 
-use Symfony\Component\Finder\Finder;
 use Symfony\Component\Finder\SplFileInfo;
+use Symfony\Component\Finder\Finder;
 
 /**
  * Defines a common analyzer with default methods.
@@ -35,7 +35,7 @@ class BaseAnalyzer {
   protected $codeparser;
 
   public function __construct(CodeParser $codeparser, $analyzer) {
-    $this->codeparser = $code_parser;
+    $this->codeparser = $codeparser;
     $this->analyzer = $analyzer;
   }
 

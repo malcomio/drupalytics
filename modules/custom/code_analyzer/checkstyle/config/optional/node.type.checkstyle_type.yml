@@ -1,11 +1,11 @@
 langcode: en
 status: true
 dependencies:
-  enforced:
-    module:
-      - checkstyle
   module:
-      - menu_ui
+    - menu_ui
+#  enforced:
+#    module:
+#      - checkstyle
 third_party_settings:
     menu_ui:
         available_menus:

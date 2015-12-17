@@ -33,6 +33,7 @@ class Analyzer extends BaseAnalyzer implements AnalyzerInterface {
    */
   public function __construct(CodeParser $codeparser, GeshiProcessor $geshi_processor) {
     parent::__construct($codeparser, new \PHP_CodeSniffer());
+    $this->geshi_processor = $geshi_processor;
     $this->configureAnalyzer();
   }
 
@@ -102,6 +103,7 @@ class Analyzer extends BaseAnalyzer implements AnalyzerInterface {
         \Drupal::config('checkstyle.settings')->get('display_lines')
       );
     $geshi = $this->geshi_processor->getGeshi($source_code, 'php');
+    # todo GeSHi lib should be installed during make process
     $geshi->highlight_lines_extra($highlightLine);
     $title = $relative_path . ', line ' . $highlight_line;
 

@@ -9,8 +9,6 @@
 namespace Drupal\code_analyzer;
 
 
-use Symfony\Component\Finder\SplFileInfo;
-
 class CodeParser {
   
   protected $file;

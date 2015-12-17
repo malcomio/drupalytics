@@ -42,20 +42,3 @@ function checkstyle_schema() {
 
   return $schema;
 }
-
-/**
- * Implements hook_requirements().
- */
-function checkstyle_requirements($phase) {
-  $requirements = [];
-  if ($phase == 'install') {
-    if (!class_exists('\Gitonomy\Git\Repository')) {
-      $requirements['addressing_library'] = [
-        'description' => t('Checkstyle requires the gitonomy/gitlib library.'),
-        'severity' => REQUIREMENT_ERROR,
-      ];
-    }
-  }
-
-  return $requirements;
-}

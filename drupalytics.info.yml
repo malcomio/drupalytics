@@ -30,6 +30,7 @@ dependencies:
   - dblog
   - search
   - shortcut
+  - text
   - toolbar
   - field_ui
   - file
@@ -38,9 +39,11 @@ dependencies:
   - views_ui
   - tour
   - automated_cron
+  - libraries
   - geshifilter
   - composer_manager
   - code_analyzer
+  - checkstyle
 
 themes:
   - bartik

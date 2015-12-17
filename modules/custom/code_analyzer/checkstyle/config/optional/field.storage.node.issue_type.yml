@@ -1,9 +1,9 @@
 langcode: en
 status: true
 dependencies:
-  enforced:
-    module:
-      - checkstyle
+#  enforced:
+#    module:
+#      - checkstyle
   module:
     - node
   config:

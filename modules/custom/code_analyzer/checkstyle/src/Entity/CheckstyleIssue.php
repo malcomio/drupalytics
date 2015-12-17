@@ -63,7 +63,10 @@ class CheckstyleIssue extends ContentEntityBase implements CheckstyleIssueInterf
     $values += array(
       'user_id' => \Drupal::currentUser()->id(),
     );
-    $values['issue_type'] = \Drupal::service('checkstyle.issue.nodemapper')->getCheckstyleTypeId($values['issue_type']);
+    if (isset($values['issue_type'])) {
+      $values['issue_type'] = \Drupal::service('checkstyle.issue.nodemapper')
+        ->getCheckstyleTypeId($values['issue_type']);
+    }
     return FALSE;
   }
 
